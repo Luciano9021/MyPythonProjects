@@ -1,0 +1,44 @@
+Calculator
+
+def add(n1, n2):
+  return n1 + n2
+def subtract(n1, n2):
+  return n1 -n2
+def multiply(n1, n2):
+  return n1 * n2
+def divide(n1, n2):
+  return n1 / n2
+operations = { 
+  "+": add,
+  "-": subtract,
+  "*": multiply,
+  "/": divide,
+  }
+# multiply 4*8 using dictionary
+
+def calculator():
+  n1 = float(input("What is number 1? \n"))
+  running = True
+
+  while running:
+
+    ops = input("What operation do you want to perform? '+', '-', '*', or '/' ? \n")
+
+    n2 = float(input("What is number 2? \n"))
+
+    n1 = float(n1)
+    n2 = float(n2)
+  
+    sum = operations[ops](n1, n2)
+
+    print(sum)
+
+    continue_running = input(f"Do you want to continue calculating with {sum}? 'y' or 'n ' ? \n")
+    if continue_running == 'n':
+      running = False
+      print("\n" * 20 )
+      calculator()
+    else:
+      n1=sum
+  
+calculator() 
