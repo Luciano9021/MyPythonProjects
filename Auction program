@@ -1,0 +1,27 @@
+Auction program
+
+program_over = False
+names_and_bids = {}
+
+highest_bid = 0
+winner = ""
+
+while not program_over:
+  print("Hello")
+  name = input("what is your name?\n")
+  bid = input("What is your bid?\n")
+  print("\n" * 100)
+  names_and_bids [name] = bid
+  # print(names_and_bids)
+  end = input("Are there any other bids?")
+  if end == "No":
+    program_over = True
+
+for bid in names_and_bids:
+  current_bid = names_and_bids[bid]
+
+  if int(current_bid) > int(highest_bid):
+    highest_bid = current_bid
+    winner = bid
+
+print(f"The winner is {winner} with a bid of ${highest_bid}.")
